@@ -1,5 +1,5 @@
 from cgi import parse_qs
-html = """Введите значения в интервале от 0 до 1 в формате '0.1'.<br>
+html = """Введите значения в интервале от 0 до 1 в формате '0.1'.(1 - да; 0 - нет.)<br>
 <form method="get">Ваш продукт уникален?<input name="Answer1"></input><br>
 <form method="get">Какие первоначальные инвестиции требуются в ваш проект?<input name="Answer2"></input><br>
 <form method="get">Сколько инвестируете вы в свой проект?<input name="Answer3"></input><br>
