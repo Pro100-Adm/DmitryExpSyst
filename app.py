@@ -33,7 +33,7 @@ def wsgi_app(environ, start_response):
     x.append(Answer7)
     if Answer1 and Answer2 and Answer3 and Answer4 and Answer5 and Answer6 and Answer7:
         try:
-           for i in range(0,len(x)-1):
+            for i in range(0,len(x)-1):
                 x[i]=float(x[i])
             y1=(x[1]/x[3])
             y2=(x[2]/x[1]*x[3])-(x[6]/100*x[3])
