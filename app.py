@@ -35,9 +35,9 @@ def wsgi_app(environ, start_response):
         try:
             for i in range(0,len(x)-1):
                 x[i]=float(x[i])
-            y1=(x[1]/x[3])
-            y2=(x[2]/x[1]*x[3])-(x[6]/100*x[3])
-            response_body=str(y1)
+            #y1=(x[1]/x[3])
+            #y2=(x[2]/x[1]*x[3])-(x[6]/100*x[3])
+            response_body=str(x[1]/x[3])
             start_response(status, response_headers)
             yield response_body.encode()
         except:
