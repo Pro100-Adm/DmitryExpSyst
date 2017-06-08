@@ -31,19 +31,22 @@ def wsgi_app(environ, start_response):
     x.append(Answer5)
     x.append(Answer6)
     x.append(Answer7)
-    if Answer1 and Answer2 and Answer3 and Answer4 and Answer5 and Answer6 and Answer7:
-        try:
-            for i in range(0,len(x)-1):
-                x[i]=float(x[i])
-            y1=(x[1]/x[3])
-            y2=(x[2]/x[1]*x[3])-(x[6]/100*x[3])
-            response_body="Период возврата средств: "+str(y1)+"<br>"+"Ваш месячный доход: "+str(y2)
-            start_response(status, response_headers)
-            yield response_body.encode()
-        except:
-            response_body="Пожалуйста, введите корректные значения.<br>"
-            start_response(status, response_headers)
-            yield response_body.encode()
+    response_body=x
+    start_response(status, response_headers)
+    yield response_body.encode()
+    #if Answer1 and Answer2 and Answer3 and Answer4 and Answer5 and Answer6 and Answer7:
+    #    try:
+    #       for i in range(0,len(x)-1):
+    #            x[i]=float(x[i])
+    #        y1=(x[1]/x[3])
+    #        y2=(x[2]/x[1]*x[3])-(x[6]/100*x[3])
+    #        response_body="Период возврата средств: "+str(y1)+"<br>"+"Ваш месячный доход: "+str(y2)
+    #        start_response(status, response_headers)
+    #        yield response_body.encode()
+    #    except:
+    #        response_body="Пожалуйста, введите корректные значения.<br>"
+    #        start_response(status, response_headers)
+    #        yield response_body.encode()
     
 if __name__ == '__main__':
     from wsgiref.simple_server import make_server
